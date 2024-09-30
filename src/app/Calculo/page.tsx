@@ -6,7 +6,7 @@ export default function Calculo() {
     <div>
         <h1>Calculo</h1>
         <Image
-        src="/calculo.jpg" 
+        src="/conta.jpg" 
         alt="Descrição da imagem"
         width={500} 
         height={300} />
