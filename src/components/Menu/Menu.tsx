@@ -3,12 +3,12 @@ import Link from "next/link"
 export default function Menu() {
     return (
         <nav>
-            <ul>
-                <li><Link href="/">Home</Link></li>
-                <li><Link href="/">Página 1</Link></li>
-                <li><Link href="/">Página 2</Link></li>
-                <li><Link href="/">Página 3</Link></li>
-                <li><Link href="/">Página 4</Link></li>
+            <ul className="flex space-x-4">
+                <li><Link href="/" className="text-lg font-semibold">Home</Link></li>
+                <li><Link href="/Catastrofe" className="text-lg font-semibold">Catastrofe</Link></li>
+                <li><Link href="/Interpretação" className="text-lg font-semibold">Interpretação</Link></li>
+                <li><Link href="/Linguagem" className="text-lg font-semibold">Linguagem</Link></li>
+                <li><Link href="/" className="text-lg font-semibold">Cálculos</Link></li>
             </ul>
         </nav>
     )
