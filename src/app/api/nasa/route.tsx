@@ -1,16 +1,12 @@
-"use client"
-import { useEffect, useState } from "react";
+import { TipoImagem } from "@/type";
+import { promises as fs } from "fs";
+import { NextResponse } from "next/server";
 
-export default function GET() {
-    const [apod, setApod] = useState(null);
+export async function GET() {
+    const file = await fs.readFile(process.cwd() + '/src/data/imagem.json', 'utf-8')
+    const data: TipoImagem[] = JSON.parse(file)
 
-    useEffect(() => {
-        const fetchApod = async () => {
-            const response = await fetch('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY');
-            const data = await response.json();
-            setApod(data);
-        };
-
-        fetchApod();
-    }, []);
+    return NextResponse.json(data)
 }
+
+
